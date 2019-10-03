@@ -20,6 +20,8 @@ body{
 .navbar {
   /*background-color: rgba(248, 247, 216, 0.7);   */
   background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
  
   height: 80px;
   font-size: 20px;
