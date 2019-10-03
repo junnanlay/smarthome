@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Jun
  */
 public class Loginservlet extends HttpServlet {
-    @EJB
-    LoginBean loginbean;
+    //@EJB
+    //LoginBean loginbean;
    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
