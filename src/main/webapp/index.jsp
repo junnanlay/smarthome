@@ -49,7 +49,16 @@
         </div>
         
         <div>
-            <h2>CODE HERE</h2>
+            <div class="header">
+            <h1>SmartHouse</h1>
+            <p>
+                Control your house through your 
+                <br>mobile or computer
+            </p>
+            <button type="button">Open GUI</button>
+        </div>
+    </div>
+
         </div>
     </body>
 </html>
