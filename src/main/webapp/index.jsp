@@ -21,7 +21,8 @@
     <body>
         <div>
         <nav class="navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="#">Smarthouse</a>
+            <a href="#"> <img src="img/logo.png" width="70" height="70" alt=""> </a>
+            <a class="navbar-brand" href="#"> Smarthouse</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i></span>
             </button>
