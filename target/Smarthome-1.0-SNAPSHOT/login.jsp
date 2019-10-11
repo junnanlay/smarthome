@@ -25,7 +25,7 @@
             </div>
             <div class="login-content">
 		<form action="Loginservlet" method="post">
-                    <img src="img/avatar2.svg">
+                    <img src="img/logo.png">
                     <h2 class="title">Smarthouse</h2>
                     <div class="input-div one">
                         <div class="i">
