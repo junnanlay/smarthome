@@ -5,7 +5,11 @@
  */
 package beans;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -13,6 +17,9 @@ import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 
 /**
  *
@@ -20,21 +27,19 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class LoginBean {
-
-    public String validate(String username, String password) {
-        try {
-            Socket socket = new Socket(InetAddress.getLocalHost(),12345);
-            PrintWriter out = new PrintWriter(socket.getOutputStream());
-            
-            String message = "username = " + username +" password = " + password;
-            out.println(message);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(LoginBean.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    
+    public LoginBean() {
         
-        return "hello";
+    }
+    public File validate(String username, String password) throws FileNotFoundException {
+         JsonObject account = Json.createObjectBuilder()
+        .add("username", username)
+        .add("password", password).build();
+        System.out.println(account.toString());
+        //TODO tcp koppling;
+        File file = new File("C:\\Users\\Jun\\Desktop\\text.json");
+        
+        return file;
     }
 
     
