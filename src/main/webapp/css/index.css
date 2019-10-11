@@ -10,9 +10,8 @@ and open the template in the editor.
 body{
     background-image: url("../img/bg6.jpg");
     font-family: 'Poppins', sans-serif;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-size: cover;
+    
 }
 
 .navbar {
