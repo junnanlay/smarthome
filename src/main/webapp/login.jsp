@@ -24,7 +24,7 @@
                 <img src="img/ipad.svg">
             </div>
             <div class="login-content">
-		<form action="Loginservlet" method="post">
+		<form action="Loginservlet" method="get">
                     <img src="img/logo.png">
                     <h2 class="title">Smarthouse</h2>
                     <div class="input-div one">
@@ -33,7 +33,7 @@
            		</div>
                         <div class="div">
                             <h5>Username</h5>
-                            <input type="text" class="input" name="username" required>
+                            <input type="email" class="input" name="email" required>
            		</div>
                     </div>
                     <div class="input-div pass">

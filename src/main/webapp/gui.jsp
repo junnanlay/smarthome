@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,8 @@
 
     
     <img id="myImage" src="img/lampis.png">
-
+    <c:out value="${sessionScope.Content}" />
+    
     <script type="text/javascript">
         var slider = document.getElementById("slider");
         var val = document.getElementById("value");

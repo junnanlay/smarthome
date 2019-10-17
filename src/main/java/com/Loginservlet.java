@@ -5,28 +5,28 @@
  */
 package com;
 
-import beans.LoginBean;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import javax.ejb.EJB;
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import models.User;
+import sun.misc.BASE64Encoder;
+
 
 /**
  *
  * @author Jun
  */
 public class Loginservlet extends HttpServlet {
-    @EJB
-    LoginBean loginbean;
+    
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,6 +38,27 @@ public class Loginservlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String url = "http://localhost:4141/SmartHouseApi/login/" + email;
+        String authString = email + ":" + password;
+        String authStringEnc = new BASE64Encoder().encode(authString.getBytes());
+        System.out.println("Base64 encoded auth string: " + authStringEnc);
+        
+         Client client = ClientBuilder.newClient();
+         String content = client.target(url)
+        .request(MediaType.APPLICATION_JSON)
+        .header("Authorization","Basic "+authStringEnc)
+        .get(String.class);
+         
+        HttpSession session = request.getSession();
+        session.setAttribute("Content", content);
+        RequestDispatcher requestDispatcher = request
+                    .getRequestDispatcher("/gui.jsp");
+            requestDispatcher.forward(request, response);
+                 
     }
 
    
@@ -45,19 +66,6 @@ public class Loginservlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        
-        File file = loginbean.validate(username, password);
-        
-        InputStream fis = new FileInputStream(file);
-        JsonReader reader = Json.createReader(fis);
-        
-        JsonObject personObject = reader.readObject();
-        
-        System.out.println(personObject.toString());
         
         
     }
