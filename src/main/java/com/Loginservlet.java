@@ -40,6 +40,17 @@ public class Loginservlet extends HttpServlet {
         processRequest(request, response);
         
         
+        
+            
+                 
+    }
+
+   
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+        
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String url = "http://localhost:4141/SmartHouseApi/login/" + email;
@@ -58,16 +69,6 @@ public class Loginservlet extends HttpServlet {
         RequestDispatcher requestDispatcher = request
                     .getRequestDispatcher("/gui.jsp");
             requestDispatcher.forward(request, response);
-                 
-    }
-
-   
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-        
-        
     }
 
     /**
