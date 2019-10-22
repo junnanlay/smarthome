@@ -59,7 +59,8 @@ public class Loginservlet extends HttpServlet {
         System.out.println("Base64 encoded auth string: " + authStringEnc);
         
          Client client = ClientBuilder.newClient();
-         String content = client.target(url)
+         WebTarget baseTarget = client.target(url);
+         String content = baseTarget
         .request(MediaType.APPLICATION_JSON)
         .header("Authorization","Basic "+authStringEnc)
         .get(String.class);
