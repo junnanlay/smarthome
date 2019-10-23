@@ -18,7 +18,9 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import models.User;
-import sun.misc.BASE64Encoder;
+import javax.xml.bind.DatatypeConverter;
+import java.util.Base64;
+//import sun.misc.BASE64Encoder;
 
 
 /**
@@ -55,7 +57,9 @@ public class Loginservlet extends HttpServlet {
         String password = request.getParameter("password");
         String url = "http://localhost:4141/SmartHouseApi/login/" + email;
         String authString = email + ":" + password;
-        String authStringEnc = new BASE64Encoder().encode(authString.getBytes());
+        String authStringEnc = Base64.getEncoder().encodeToString(authString.getBytes());
+
+        //String authStringEnc = new BASE64Encoder().encode(authString.getBytes());
         System.out.println("Base64 encoded auth string: " + authStringEnc);
         
          Client client = ClientBuilder.newClient();
