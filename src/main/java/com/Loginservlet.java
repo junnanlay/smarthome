@@ -58,9 +58,11 @@ public class Loginservlet extends HttpServlet {
         String url = "http://localhost:4141/SmartHouseApi/login/" + email;
         String authString = email + ":" + password;
         String authStringEnc = Base64.getEncoder().encodeToString(authString.getBytes());
+        
 
         //String authStringEnc = new BASE64Encoder().encode(authString.getBytes());
         System.out.println("Base64 encoded auth string: " + authStringEnc);
+        
         
          Client client = ClientBuilder.newClient();
          WebTarget baseTarget = client.target(url);
@@ -69,8 +71,22 @@ public class Loginservlet extends HttpServlet {
         .header("Authorization","Basic "+authStringEnc)
         .get(String.class);
          
+         String url2 = "http://localhost:4141/SmartHouseApi/devices/";
+         WebTarget baseTarget2= client.target(url2);
+         String content2 = baseTarget2.request(MediaType.APPLICATION_JSON).get(String.class);
+         
+         
+       
+         
+         
         HttpSession session = request.getSession();
-        session.setAttribute("Content", content);
+        session.setAttribute("Content", content+content2);
+        
+        
+         
+    
+      
+       
         
         response.sendRedirect(request.getContextPath() + "/gui.jsp");
     }

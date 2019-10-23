@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/gui.css">
 </head>
 <body>
+    <button onclick="refresh()" class="refreshDevices">Update devices</button>
+    <p id="deviceText"> device empty </p>
     <div class="box">
         <center>
             <div id="value"></div>
@@ -28,6 +30,8 @@
     
     <img id="myImage" src="img/lampis.png">
     <c:out value="${sessionScope.Content}" />
+    
+    <script src="http://localhost:4141/SmartHouseApi/devices"></script>
     
     <script type="text/javascript">
         var slider = document.getElementById("slider");
@@ -44,8 +48,22 @@
         else if(val.innerHTML==0){
             document.getElementById("myImage").src="img/lampis.png";
         }
-       
     }
+  
+   
+    
+    function refresh(){
+       let url = "http://localhost:4141/SmartHouseApi/devices/";
+
+    fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+    console.log("Checkout this JSON! ", out);
+    })
+    .catch(err => { throw err });
+       
+        }
+        
     </script>
 
 
