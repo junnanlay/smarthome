@@ -67,9 +67,8 @@ public class Loginservlet extends HttpServlet {
          
         HttpSession session = request.getSession();
         session.setAttribute("Content", content);
-        RequestDispatcher requestDispatcher = request
-                    .getRequestDispatcher("/gui.jsp");
-            requestDispatcher.forward(request, response);
+        
+        response.sendRedirect(request.getContextPath() + "/gui.jsp");
     }
 
     /**
@@ -81,5 +80,9 @@ public class Loginservlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
+    public void validate() {
+        
+    }
 
 }
