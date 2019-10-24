@@ -25,7 +25,7 @@
             </div>
             <div class="login-content">
 		<form action="Loginservlet" method="post">
-                    <img src="img/logo.png">
+                    <img src="img/logo_1.png">
                     <h2 class="title">Smarthouse</h2>
                     <div class="input-div one">
                         <div class="i">
@@ -46,7 +46,6 @@
                         </div>
                     </div>
                     <input type="submit" class="btn" value="Login">
-                    <a href="#">Already have an account? Sign in</a>
                     <a href="#">Forgot Password?</a>
                 </form>
             </div>

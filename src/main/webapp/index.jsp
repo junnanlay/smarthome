@@ -21,7 +21,7 @@
     <body>
         <div>
         <nav class="navbar navbar-expand-lg ">
-            <a href="#"> <img src="img/logo.png" width="70" height="70" alt=""> </a>
+            <a href="#"> <img src="img/logo_1.png" width="70" height="70" alt=""> </a>
             <a class="navbar-brand" href="#"> Smarthouse</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i></span>
@@ -38,11 +38,7 @@
                   <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./login.jsp">Register</a>
-                </li>
-
-                <li class="nav-item">
-                  <button type="button" class="btn btn-link">Login</button>
+                  <a class="nav-link" href="./login.jsp">Login</a>
                 </li>
               </ul>
             </div>

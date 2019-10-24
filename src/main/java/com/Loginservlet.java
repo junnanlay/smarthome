@@ -55,7 +55,7 @@ public class Loginservlet extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        String url = "http://localhost:4141/SmartHouseApi/login/" + email;
+        String userURL = "http://localhost:4141/SmartHouseApi/login/" + email;
         String authString = email + ":" + password;
         String authStringEnc = Base64.getEncoder().encodeToString(authString.getBytes());
         
@@ -64,45 +64,30 @@ public class Loginservlet extends HttpServlet {
         System.out.println("Base64 encoded auth string: " + authStringEnc);
         
         
-         Client client = ClientBuilder.newClient();
-         WebTarget baseTarget = client.target(url);
-         String content = baseTarget
+        Client client = ClientBuilder.newClient();
+        WebTarget userBaseTarget = client.target(userURL);
+         
+        String userContent = userBaseTarget
         .request(MediaType.APPLICATION_JSON)
         .header("Authorization","Basic "+authStringEnc)
         .get(String.class);
          
-         String url2 = "http://localhost:4141/SmartHouseApi/devices/";
-         WebTarget baseTarget2= client.target(url2);
-         String content2 = baseTarget2.request(MediaType.APPLICATION_JSON).get(String.class);
-         
-         
-       
-         
-         
+        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
+        WebTarget deviceBaseTarget= client.target(deviceURL);
+        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        
         HttpSession session = request.getSession();
-        session.setAttribute("Content", content+content2);
+        session.setAttribute("user", userContent);
+        session.setAttribute("devices", deviceContent);
         
-        
-         
-    
-      
-       
-        
-        response.sendRedirect(request.getContextPath() + "/gui.jsp");
+        response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
     
     public void validate() {
-        
+        //TODO login validtion here
     }
-
+    
+    public void getDevices() {
+        //TODO get devices here
+    }
 }
