@@ -5,7 +5,10 @@
  */
 package com;
 
+import com.google.gson.Gson;
+import com.owlike.genson.Genson;
 import java.io.IOException;
+import java.io.StringReader;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +23,11 @@ import javax.ws.rs.core.Response;
 import models.User;
 import javax.xml.bind.DatatypeConverter;
 import java.util.Base64;
+import javax.json.Json;
+import javax.json.JsonObject;
+import jdk.nashorn.internal.parser.JSONParser;
+import models.Device;
+
 //import sun.misc.BASE64Encoder;
 
 
@@ -80,7 +88,21 @@ public class Loginservlet extends HttpServlet {
         session.setAttribute("user", userContent);
         session.setAttribute("devices", deviceContent);
         
-        // forked
+        Gson gson = new Gson();
+        Device devices [] = gson.fromJson(deviceContent, Device[].class); 
+        
+        for(Device div : devices) {
+                       
+            System.out.println("DEVICE ID = "+div.getDeviceId());
+            System.out.println("DEVICE NAME = "+div.getDeviceName());
+            System.out.println("DEVICE STATUS = "+div.getDeviceStatus());
+            
+            
+        }  
+       
+        
+        
+        
         
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
