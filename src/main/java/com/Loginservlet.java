@@ -80,6 +80,8 @@ public class Loginservlet extends HttpServlet {
         session.setAttribute("user", userContent);
         session.setAttribute("devices", deviceContent);
         
+        // forked
+        
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
     
