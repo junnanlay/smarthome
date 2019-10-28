@@ -29,7 +29,14 @@
 
     
     <img id="myImage" src="../img/lampis.png">
-    <c:out value="${sessionScope.Content}" />
+    <c:forEach var="current" items="${sessionScope.bean.device}" >
+
+    ${current.deviceId}
+    ${current.deviceName}
+    ${current.deviceStatus}
+    <br>
+
+ </c:forEach>
     
     <script src="http://localhost:4141/SmartHouseApi/devices"></script>
     
