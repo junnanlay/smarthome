@@ -47,4 +47,11 @@ public class Device {
     public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
+
+    @Override
+    public String toString() {
+        return "Device{" + "deviceStatus=" + deviceStatus + ", deviceName=" + deviceName + ", deviceId=" + deviceId + '}';
+    }
+    
+    
 }

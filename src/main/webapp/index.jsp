@@ -19,32 +19,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div>
-        <nav class="navbar navbar-expand-lg ">
-            <a href="#"> <img src="img/logo_1.png" width="70" height="70" alt=""> </a>
-            <a class="navbar-brand" href="#"> Smarthouse</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"><i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Instructions</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./login.jsp">Login</a>
-                </li>
-              </ul>
-            </div>
-         </nav>
-        </div>
-        
+        <jsp:include page="navbar.jsp" ></jsp:include>
         <div>
             <div class="header">
             <h1>SmartHouse</h1>

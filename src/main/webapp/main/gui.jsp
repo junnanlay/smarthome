@@ -14,69 +14,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>light GUI</title>
     <link rel="stylesheet" href="../css/gui.css">
+    
 </head>
 <body>
-    <button onclick="refresh()" class="refreshDevices">Update devices</button>
-    <p id="deviceText"> device empty </p>
-    <div class="box">
-        <center>
-            <div id="value"></div>
-        </center>
-    </div>
-    <div onclick="clickis()" class="container">
-        <input type="range" min="0" max="100" value="50" class="slider" id="slider">
-    </div>
-
-    
-    <img id="myImage" src="../img/lampis.png">
     <c:forEach var="current" items="${sessionScope.bean.device}" >
-
-    ${current.deviceId}
-    ${current.deviceName}
-    ${current.deviceStatus}
-    <br>
-
- </c:forEach>
-    
-    <script src="http://localhost:4141/SmartHouseApi/devices"></script>
-    
-    <script type="text/javascript">
-        var slider = document.getElementById("slider");
-        var val = document.getElementById("value");
-        val.innerHTML=slider.value;
-        slider.oninput=function(){
-            val.innerHTML=this.value;
-        }
-        
-    function clickis(){
-        if(val.innerHTML==100){
-            document.getElementById("myImage").src="../img/lampis2.png";
-        }
-        else if(val.innerHTML==0){
-            document.getElementById("myImage").src="../img/lampis.png";
-        }
-    }
-  
-   
-    
-    function refresh(){
-       let url = "http://localhost:4141/SmartHouseApi/devices/";
-
-    fetch(url)
-    .then(res => res.json())
-    .then((out) => {
-    console.log("Checkout this JSON! ", out);
-    })
-    .catch(err => { throw err });
-       
-        }
-        
-    </script>
-
-
-
-    
-
+        <div>
+            <jsp:include page="component.jsp" >
+            <jsp:param name="deviceStatus" value="${current.deviceStatus}" />
+            <jsp:param name="deviceName" value="${current.deviceName}" />
+            <jsp:param name="deviceId" value="${current.deviceId}" />
+        </jsp:include>
+        </div>
+    </c:forEach>
     
 </body>
 </html>

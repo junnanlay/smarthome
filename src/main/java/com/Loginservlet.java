@@ -6,11 +6,8 @@
 package com;
 
 import com.google.gson.Gson;
-import com.owlike.genson.Genson;
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,17 +17,10 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import models.User;
-import javax.xml.bind.DatatypeConverter;
 import java.util.Base64;
-import java.util.List;
-import javax.json.Json;
-import javax.json.JsonObject;
-import jdk.nashorn.internal.parser.JSONParser;
 import models.Device;
 import models.DeviceArrayListBean;
-import scala.util.parsing.json.JSONArray;
+
 
 //import sun.misc.BASE64Encoder;
 
@@ -53,10 +43,7 @@ public class Loginservlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        
-        
-            
-                 
+       System.out.println("hello");         
     }
 
    
@@ -125,12 +112,6 @@ public class Loginservlet extends HttpServlet {
             System.out.println("DEVICE NAME = "+dataList.get(i).getDeviceName());
             System.out.println("DEVICE STATUS = "+dataList.get(i).getDeviceStatus());
         }
-        
-        
-       
-        
-        
-        
         
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
