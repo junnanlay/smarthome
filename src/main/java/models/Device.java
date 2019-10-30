@@ -12,13 +12,13 @@ package models;
 public class Device {
     private String deviceStatus;
     private String deviceName;
-    private String deviceId;
+    private int deviceId;
 
 
     public Device() {
     }
 
-    public Device(String deviceStatus, String deviceName, String deviceId) {
+    public Device(String deviceStatus, String deviceName, int deviceId) {
         this.deviceStatus = deviceStatus;
         this.deviceName = deviceName;
         this.deviceId = deviceId;
@@ -40,11 +40,11 @@ public class Device {
         this.deviceName = deviceName;
     }
 
-    public String getDeviceId() {
+    public int getDeviceId() {
         return deviceId;
     }
 
-    public void setDeviceId(String deviceId) {
+    public void setDeviceId(int deviceId) {
         this.deviceId = deviceId;
     }
 
