@@ -91,11 +91,8 @@ public class Loginservlet extends HttpServlet {
            /* System.out.println("DEVICE ID = "+div.getDeviceId());
             System.out.println("DEVICE NAME = "+div.getDeviceName());
             System.out.println("DEVICE STATUS = "+div.getDeviceStatus());*/
-            Device device = new Device();
-            device.setDeviceId(div.getDeviceId());
-            device.setDeviceName(div.getDeviceName());
-            device.setDeviceStatus(div.getDeviceStatus());
-            dataList.add(device);
+            
+            dataList.add(div);
             
         }  
         DeviceArrayListBean bean= new DeviceArrayListBean();

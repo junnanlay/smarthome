@@ -50,17 +50,27 @@ public class Deviceservlet extends HttpServlet {
         String deviceName = request.getParameter("deviceName");
         String deviceId= request.getParameter("deviceId");
         
-        String deviceUpdateUrl = "http://localhost:4141/SmartHouseApi/devices/" + 1;
+        System.out.println(deviceStatus);
+        System.out.println(deviceBtn);
+        System.out.println(deviceName);
+        System.out.println(deviceId);
         
-        Device device = new Device("off",deviceName, 1);
+        int deviceIdNbr = Integer.parseInt(deviceId);
         
         Client client = ClientBuilder.newClient();
         
-        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi").path("devices").path("1");
-        
+        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi").path("devices").path(deviceId);
         Device dev= new Device();
-        dev.setDeviceId(1);
-        dev.setDeviceStatus("Off");
+        dev.setDeviceId(deviceIdNbr);
+        
+        if(deviceBtn.equals("off")) {
+            dev.setDeviceStatus("Off");
+        }else {
+            dev.setDeviceStatus("On");
+        }
+        
+       
+        
         
         Invocation.Builder invocationBuilder =  webTarget.request(MediaType.APPLICATION_JSON);
         Response res = invocationBuilder.put(Entity.entity(dev, MediaType.APPLICATION_JSON));
