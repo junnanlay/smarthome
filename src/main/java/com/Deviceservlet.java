@@ -43,12 +43,66 @@ public class Deviceservlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        Client client = ClientBuilder.newClient();
+
+        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
+        WebTarget deviceBaseTarget= client.target(deviceURL);
+        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        
+        Gson gson = new Gson();
+        Device devices [] = gson.fromJson(deviceContent, Device[].class); 
+        
+        ArrayList<Device> dataList = new ArrayList<Device>();
+    
+        dataList.addAll(Arrays.asList(devices)); 
+        
+        DeviceArrayListBean bean= new DeviceArrayListBean();
+        bean.setDevice(dataList);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("bean", bean);
+        
+        response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
+        
+        
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String value= request.getParameter("refreshBtn");
+        System.out.println("THIS IS NEW VALUEEEEEEEEEEEEEEEEE =  "+value);
+        
+        if(value!=null){
+            Client client = ClientBuilder.newClient();
+
+        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
+        WebTarget deviceBaseTarget= client.target(deviceURL);
+        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        
+        Gson gson = new Gson();
+        Device devices [] = gson.fromJson(deviceContent, Device[].class); 
+        
+        ArrayList<Device> dataList = new ArrayList<Device>();
+    
+        dataList.addAll(Arrays.asList(devices)); 
+        
+        DeviceArrayListBean bean= new DeviceArrayListBean();
+        bean.setDevice(dataList);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("bean", bean);
+        
+        response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
+        }
+        
+        
+        
+        
+        else{
         
         String deviceBtn = request.getParameter("deviceBtn");
         String deviceStatus = request.getParameter("deviceStatus");
@@ -97,6 +151,7 @@ public class Deviceservlet extends HttpServlet {
         session.setAttribute("bean", bean);
         
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
+        }
     }
 
 }

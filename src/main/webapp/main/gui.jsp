@@ -17,6 +17,11 @@
     
 </head>
 <body>
+    
+    <form action="../Deviceservlet" method="POST">
+        <input type="submit" name="refreshBtn" value="refresh">
+    </form>
+    
     <c:forEach var="current" items="${sessionScope.bean.device}" >
         <div>
             <jsp:include page="component.jsp" >
