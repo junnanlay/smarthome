@@ -20,10 +20,10 @@
     <c:forEach var="current" items="${sessionScope.bean.device}" >
         <div>
             <jsp:include page="component.jsp" >
-            <jsp:param name="deviceStatus" value="${current.deviceStatus}" />
-            <jsp:param name="deviceName" value="${current.deviceName}" />
-            <jsp:param name="deviceId" value="${current.deviceId}" />
-        </jsp:include>
+                <jsp:param name="deviceStatus" value="${current.deviceStatus}" />
+                <jsp:param name="deviceName" value="${current.deviceName}" />
+                <jsp:param name="deviceId" value="${current.deviceId}" />
+            </jsp:include>
         </div>
     </c:forEach>
     

@@ -8,6 +8,7 @@ package com;
 import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -75,35 +76,20 @@ public class Loginservlet extends HttpServlet {
         WebTarget deviceBaseTarget= client.target(deviceURL);
         String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
         
-        HttpSession session = request.getSession();
-        session.setAttribute("user", userContent);
-        session.setAttribute("devices", deviceContent);
-        
         Gson gson = new Gson();
         Device devices [] = gson.fromJson(deviceContent, Device[].class); 
         
-       
         ArrayList<Device> dataList = new ArrayList<Device>();
     
+        dataList.addAll(Arrays.asList(devices)); 
         
-        for(Device div : devices) {
-                       
-           /* System.out.println("DEVICE ID = "+div.getDeviceId());
-            System.out.println("DEVICE NAME = "+div.getDeviceName());
-            System.out.println("DEVICE STATUS = "+div.getDeviceStatus());*/
-            
-            dataList.add(div);
-            
-        }  
         DeviceArrayListBean bean= new DeviceArrayListBean();
         bean.setDevice(dataList);
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("user", userContent);
         session.setAttribute("bean", bean);
         
-        
-        /*
-        SessionBeanDevices session2= new SessionBeanDevices();
-        session2.setArr(dataList);
-        */
         for(int i=0; i<dataList.size();i++){
             System.out.println("DEVICE ID = "+dataList.get(i).getDeviceId());
             System.out.println("DEVICE NAME = "+dataList.get(i).getDeviceName());
