@@ -110,6 +110,7 @@ public class Deviceservlet extends HttpServlet {
         String deviceId= request.getParameter("deviceId");
         
         System.out.println(deviceStatus);
+        System.out.println("hej123");
         System.out.println(deviceBtn);
         System.out.println(deviceName);
         System.out.println(deviceId);
@@ -122,7 +123,7 @@ public class Deviceservlet extends HttpServlet {
         Device dev= new Device();
         dev.setDeviceId(deviceIdNbr);
         
-        if(deviceBtn.equals("off")) {
+        if(deviceStatus.equals("On")) {
             dev.setDeviceStatus("Off");
         }else {
             dev.setDeviceStatus("On");

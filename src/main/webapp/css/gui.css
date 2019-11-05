@@ -9,78 +9,78 @@ and open the template in the editor.
 */
 
 body{
-    background: #3C3C44;
-    padding: 0;
-    margin: 0;
+    background: #3C3C44 !important; 
+    padding: 0 !important; 
+    margin: 0 !important; 
 
 }
 
 .container{
-    width: 98%;
-    height: 20px;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 98% !important; 
+    height: 20px !important; 
+    position: absolute !important; 
+    margin: auto !important; 
+    top: 0 !important; 
+    bottom: 0 !important; 
+    left: 0 !important; 
+    right: 0 !important; 
 }
 
 .slider{
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    width: 50%;
-    height: 15px;
-    -webkit-appearance: none;
-    border-radius: 5px;
-    background: #3C3C44;
-    box-shadow: inset 0 3px 18px rgba(0, 0, 0, 0.6);
-    outline: none;
+    position: absolute !important;
+    margin: auto !important; 
+    left: 0 !important; 
+    right: 0 !important; 
+    width: 50% !important; 
+    height: 15px !important; 
+    -webkit-appearance: none !important; 
+    border-radius: 5px !important; 
+    background: #3C3C44 !important; 
+    box-shadow: inset 0 3px 18px rgba(0, 0, 0, 0.6) !important; 
+    outline: none !important; 
 
 }
 
 .slider::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
+    -webkit-appearance: none !important; 
+    width: 40px !important; 
+    height: 40px !important; 
+    background-color: white !important; 
+    border-radius: 50% !important; 
+    cursor: pointer !important; 
+    outline: none !important; 
 
 }
 
 .box{
    
-    height: 100px;
-    width: 100px;
-    border-radius: 0 50% 50% 50%;
-    position: absolute;
-    margin: auto;
-    transform: rotate(-135deg);
-    left: 0;
-    right: 0;
-    top:100px;
+    height: 100px !important; 
+    width: 100px !important; 
+    border-radius: 0 50% 50% 50% !important; 
+    position: absolute !important; 
+    margin: auto !important; 
+    transform: rotate(-135deg) !important; 
+    left: 0 !important; 
+    right: 0 !important; 
+    top:100px !important; 
 }
 
 
 
 #value{
-    color: white;
-    font-size: 0px;
-    transform: rotate(135deg);
-    position: relative;
-    top: 25px;
+    color: white !important; 
+    font-size: 0px !important; 
+    transform: rotate(135deg) !important; 
+    position: relative !important; 
+    top: 25px !important; 
 }
 
 #myImage{
-    height: 150px;
-    width: 150px;
-    position: absolute;
-    left: 180px;
-    right: 0;
-    top:230px;
+    height: 150px !important; 
+    width: 150px !important; 
+    position: absolute !important; 
+    left: 180px !important; 
+    right: 0 !important; 
+    top:230px !important; 
 
 }
