@@ -18,7 +18,7 @@
 
     </head>
     <body>
-        <div class="container">
+        <div class="container2">
             <div id="card" class="card" onclick="glow()">
                 <div class="card-block">
                     <div class="outer">
@@ -37,7 +37,7 @@
                 <input type="hidden" name="deviceName" value="${param.deviceName}">
                 <input type="hidden" name="deviceStatus" value="${param.deviceStatus}">
                 <input type="hidden" name="deviceId" value="${param.deviceId}">
-                <input type="submit" name="deviceBtn" value="On/Off">
+               
             </form>
 
         </div>

@@ -62,7 +62,7 @@ public class Loginservlet extends HttpServlet {
 
         //String authStringEnc = new BASE64Encoder().encode(authString.getBytes());
         System.out.println("Base64 encoded auth string: " + authStringEnc);
-        
+        System.out.println(userURL);
         
         Client client = ClientBuilder.newClient();
         WebTarget userBaseTarget = client.target(userURL);
@@ -96,6 +96,7 @@ public class Loginservlet extends HttpServlet {
             System.out.println("DEVICE STATUS = "+dataList.get(i).getDeviceStatus());
         }
         
+        client.close();
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
     

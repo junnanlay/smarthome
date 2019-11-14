@@ -53,24 +53,24 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <!-- Slide One - Set the background image for this slide in the line below -->
-                    <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/d2Xyth9FRKk/1920x1080')">
+                    <div class="carousel-item active" style="background-image: url('./img/sliderpic1.jpg')">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 class="display-4">First Slide</h3>
-                            <p class="lead">This is a description for the first slide.</p>
+                            <h3 class="display-4">Smarthouse</h3>
+                            <p class="lead">Control your house with your phone or through the website.</p>
                         </div>
                     </div>
                     <!-- Slide Two - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('https://source.unsplash.com/yFV39g6AZ5o/1920x1080')">
+                    <div class="carousel-item" style="background-image: url('./img/sliderpic2.jpg')">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 class="display-4">Second Slide</h3>
-                            <p class="lead">This is a description for the second slide.</p>
+                            <h3 class="display-4">Smarthouse</h3>
+                            <p class="lead">Use internet connection to access</p>
                         </div>
                     </div>
                     <!-- Slide Three - Set the background image for this slide in the line below -->
-                    <div class="carousel-item" style="background-image: url('https://source.unsplash.com/yW-Qgw_IJXg/1920x1080')">
+                    <div class="carousel-item" style="background-image: url('./img/sliderpic3.jpg')">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3 class="display-4">Third Slide</h3>
-                            <p class="lead">This is a description for the third slide.</p>
+                            <h3 class="display-4">Smarthouse</h3>
+                            <p class="lead">This is the future.</p>
                         </div>
                     </div>
                 </div>
@@ -90,31 +90,22 @@
                 <div class="card">
                     <img class="card-img-top" src="https://img.icons8.com/ios-filled/200/000000/wheelchair.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <h5 class="card-title">Simple to use</h5>
+                        <p class="card-text">The application is a easy to use application where the user can control different devices in the </p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="card-img-top" src="https://img.icons8.com/cotton/200/000000/wireless-cloud-access.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <h5 class="card-title">Lorem ipsum</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
                 <div class="card">
                     <img class="card-img-top" src="https://img.icons8.com/ios-filled/200/000000/cottage--v2.png" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
+                        <h5 class="card-title">Lorem ipsum</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     </div>
                 </div>
             </div>
