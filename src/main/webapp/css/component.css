@@ -73,5 +73,7 @@ div.card-text{
     padding-top: 60px !important; 
 }
 .formis{
-    
+    position: absolute !important; 
+    right: 50px !important; 
+    top: 50px !important; 
 }
