@@ -18,8 +18,20 @@
 
     </head>
     <body>
+        
+       
         <div class="container2">
-            <div id="card" class="card" onclick="glow()">
+            
+            <div id="card" class="card" >
+                
+                <form id="deviceForm" class="formis" action="../Deviceservlet" method="POST">
+                <input type="hidden" name="deviceName" value="${param.deviceName}">
+                <input type="hidden" name="deviceStatus" value="${param.deviceStatus}">
+                <input type="hidden" name="deviceId" value="${param.deviceId}">
+                <input type="submit" class="btn btn-secondary" value="On/Off">
+               
+            </form>
+                
                 <div class="card-block">
                     <div class="outer">
                         <img src="../img/lampis3.png" height="120px" width="120px">
@@ -33,12 +45,7 @@
 
 
 
-            <form id="deviceForm" class="formis" action="../Deviceservlet" method="POST">
-                <input type="hidden" name="deviceName" value="${param.deviceName}">
-                <input type="hidden" name="deviceStatus" value="${param.deviceStatus}">
-                <input type="hidden" name="deviceId" value="${param.deviceId}">
-               
-            </form>
+           
 
         </div>
 
