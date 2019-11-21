@@ -38,7 +38,7 @@
                             </a>
                             <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
                             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Settings</a>
+                                <a class="dropdown-item" href="settings.jsp">Settings</a>
                                 <a class="dropdown-item" href="../index.jsp">Logout</a>
                             </div>
                         </li>
