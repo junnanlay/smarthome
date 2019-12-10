@@ -63,6 +63,10 @@
                 </jsp:include>
             </div>
         </c:forEach>
-
+        
+        <c:forEach var="item" items="${sessionScope.roombean}">
+            <p>${item.roomName}</p>
+            <p>${item.roomId}</p>
+        </c:forEach>
     </body>
 </html>

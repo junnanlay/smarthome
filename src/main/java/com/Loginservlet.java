@@ -21,6 +21,8 @@ import javax.ws.rs.core.MediaType;
 import java.util.Base64;
 import models.Device;
 import models.DeviceArrayListBean;
+import models.Room;
+import models.RoomArrayListBean;
 
 
 //import sun.misc.BASE64Encoder;
@@ -72,30 +74,32 @@ public class Loginservlet extends HttpServlet {
         .header("Authorization","Basic "+authStringEnc)
         .get(String.class);
          
-        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
-        WebTarget deviceBaseTarget= client.target(deviceURL);
-        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms";
+        WebTarget deviceBaseTarget= client.target(roomsURL);
+        String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
         
         Gson gson = new Gson();
-        Device devices [] = gson.fromJson(deviceContent, Device[].class); 
+        Room[] rooms = gson.fromJson(roomContent, Room[].class); 
         
-        ArrayList<Device> dataList = new ArrayList<Device>();
+        ArrayList<Room> dataList = new ArrayList<Room>();
     
-        dataList.addAll(Arrays.asList(devices)); 
+        dataList.addAll(Arrays.asList(rooms)); 
         
-        DeviceArrayListBean bean= new DeviceArrayListBean();
-        bean.setDevice(dataList);
+        /*DeviceArrayListBean deviceBean= new DeviceArrayListBean();
+        deviceBean.setDevice(dataList);
+        */
+        
+        RoomArrayListBean roomBean = new RoomArrayListBean();
+        roomBean.setRooms(dataList);
         
         HttpSession session = request.getSession();
         session.setAttribute("user", userContent);
-        session.setAttribute("bean", bean);
+        session.setAttribute("roombean", rooms);
         
-        for(int i=0; i<dataList.size();i++){
-            System.out.println("DEVICE ID = "+dataList.get(i).getDeviceId());
-            System.out.println("DEVICE NAME = "+dataList.get(i).getDeviceName());
-            System.out.println("DEVICE STATUS = "+dataList.get(i).getDeviceStatus());
+        for(int i=0; i<dataList.size(); i++) {
+            System.out.println(dataList.get(i).getRoomId());
+            System.out.println(dataList.get(i).getRoomName());
         }
-        
         client.close();
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
@@ -105,6 +109,6 @@ public class Loginservlet extends HttpServlet {
     }
     
     public void getDevices() {
-        //TODO get devices here
+        //TODO get rooms here
     }
 }
