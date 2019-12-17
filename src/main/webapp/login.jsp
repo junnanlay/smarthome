@@ -17,8 +17,8 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
     <body>
-                
-       <div class="login-dark h-100">
+
+        <div class="login-dark h-100">
             <form action="Loginservlet" method="post">
                 <h2>Smarthouse</h2>
                 <div class="illustration">
@@ -33,8 +33,35 @@
                 <div class="form-group">
                     <button class="btn btn-primary btn-block" type="submit">Log In </button>
                 </div>
-                <a class="forgot" href="#"> Forgot your password?</a>
+                <a class="forgot" href="#" data-toggle="modal" data-target="#bannerformmodal"> Forgot your password?</a>
             </form>
+        </div>
+
+        <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Forgot your password?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="Getpasswordservlet" method="post">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input class="form-control" type="email" name="email" placeholder="Enter email" required > 
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            <button class="btn btn-primary" type="submit">Get password</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
