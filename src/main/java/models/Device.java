@@ -10,26 +10,35 @@ package models;
  * @author Jun
  */
 public class Device {
-    private String deviceStatus;
+    private int deviceStatus;
     private String deviceName;
     private int deviceId;
+    private int roomId;
 
 
     public Device() {
     }
 
-    public Device(String deviceStatus, String deviceName, int deviceId) {
+    public Device(int deviceStatus, String deviceName, int deviceId) {
         this.deviceStatus = deviceStatus;
         this.deviceName = deviceName;
         this.deviceId = deviceId;
     }
 
-    public String getDeviceStatus() {
+    public int getDeviceStatus() {
         return deviceStatus;
     }
 
-    public void setDeviceStatus(String deviceStatus) {
+    public void setDeviceStatus(int deviceStatus) {
         this.deviceStatus = deviceStatus;
+    }
+
+    public int getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(int roomId) {
+        this.roomId = roomId;
     }
 
     public String getDeviceName() {

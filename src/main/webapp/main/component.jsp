@@ -28,7 +28,9 @@
                 <input type="hidden" name="deviceName" value="${param.deviceName}">
                 <input type="hidden" name="deviceStatus" value="${param.deviceStatus}">
                 <input type="hidden" name="deviceId" value="${param.deviceId}">
+                <input type="hidden" name="roomId" value="${param.roomId}">
                 <input type="submit" class="btn btn-secondary" value="On/Off">
+                
                
             </form>
                 

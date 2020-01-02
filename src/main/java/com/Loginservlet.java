@@ -101,7 +101,7 @@ public class Loginservlet extends HttpServlet {
             System.out.println(dataList.get(i).getRoomName());
         }
         client.close();
-        response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
+        response.sendRedirect(request.getContextPath() + "/main/rooms.jsp");
     }
     
     public void validate() {

@@ -61,40 +61,43 @@ public class Deviceservlet extends HttpServlet {
         int deviceIdNbr = Integer.parseInt(deviceId);
 
         Client client = ClientBuilder.newClient();
+        String roomId = request.getParameter("roomId");
 
-        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi/").path("devices").path(deviceId);
+        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi/houseId/").path("rooms").path(roomId).path(deviceId);
         Device dev = new Device();
         dev.setDeviceId(deviceIdNbr);
 
-        if (deviceStatus.equalsIgnoreCase("on")) {
-            dev.setDeviceStatus("off");
+        int deviceStatusNbr = Integer.parseInt(deviceStatus);
+
+        if (deviceStatusNbr < (130)) {
+            dev.setDeviceStatus(255);
         } else {
-            dev.setDeviceStatus("on");
+            dev.setDeviceStatus(0);
         }
 
         Invocation.Builder invocationBuilder = webTarget.request(MediaType.APPLICATION_JSON);
         Response res = invocationBuilder.put(Entity.entity(dev, MediaType.APPLICATION_JSON));
+        
+        String roomid = request.getParameter("roomId");
 
-        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
-        WebTarget deviceBaseTarget = client.target(deviceURL);
-        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms/";
+        WebTarget deviceBaseTarget = client.target(roomsURL).path(roomid);
+        String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
 
         Gson gson = new Gson();
-        Device devices[] = gson.fromJson(deviceContent, Device[].class);
+        Device[] device = gson.fromJson(roomContent, Device[].class);
 
         ArrayList<Device> dataList = new ArrayList<Device>();
 
-        dataList.addAll(Arrays.asList(devices));
+        dataList.addAll(Arrays.asList(device));
 
-        DeviceArrayListBean bean = new DeviceArrayListBean();
-        bean.setDevice(dataList);
-
+        /*DeviceArrayListBean deviceBean= new DeviceArrayListBean();
+        deviceBean.setDevice(dataList);
+         */
         HttpSession session = request.getSession();
-        session.setAttribute("bean", bean);
+        session.setAttribute("devicebean", device);
 
-        client.close();
+        
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
 }
-
-
