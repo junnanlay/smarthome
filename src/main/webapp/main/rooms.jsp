@@ -21,7 +21,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Smarthouse</a>
+                <a class="navbar-brand" href="rooms.jsp">Smarthouse</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,8 +33,8 @@
                                 Options
                             </a>
                             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="settings.jsp">Settings</a>
+                                <a class="dropdown-item" href="../index.jsp">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -62,7 +62,7 @@
                                     <input type="hidden" value="${item.roomId}" name="roomId">
                                     <button type="submit" class="btn btn-dark">Continue</button>
                                 </form>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -74,6 +74,6 @@
 
 
             </div>
-           
+
     </body>
 </html>

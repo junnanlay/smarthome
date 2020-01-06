@@ -47,26 +47,27 @@ public class Refreshservlet extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
 
+        String roomid = request.getParameter("roomid");
         Client client = ClientBuilder.newClient();
 
-        String deviceURL = "http://localhost:4141/SmartHouseApi/devices/";
-        WebTarget deviceBaseTarget = client.target(deviceURL);
-        String deviceContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
+        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms/";
+        WebTarget deviceBaseTarget = client.target(roomsURL).path(roomid);
+        String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
 
         Gson gson = new Gson();
-        Device devices[] = gson.fromJson(deviceContent, Device[].class);
+        Device[] device = gson.fromJson(roomContent, Device[].class);
 
         ArrayList<Device> dataList = new ArrayList<Device>();
 
-        dataList.addAll(Arrays.asList(devices));
+        dataList.addAll(Arrays.asList(device));
 
-        DeviceArrayListBean bean = new DeviceArrayListBean();
-        bean.setDevice(dataList);
-
+        /*DeviceArrayListBean deviceBean= new DeviceArrayListBean();
+        deviceBean.setDevice(dataList);
+         */
         HttpSession session = request.getSession();
-        session.setAttribute("bean", bean);
+        session.setAttribute("roomid", roomid);
+        session.setAttribute("devicebean", device);
 
-        client.close();
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");
     }
 

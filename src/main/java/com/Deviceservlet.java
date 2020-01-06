@@ -69,8 +69,8 @@ public class Deviceservlet extends HttpServlet {
 
         int deviceStatusNbr = Integer.parseInt(deviceStatus);
 
-        if (deviceStatusNbr < (130)) {
-            dev.setDeviceStatus(255);
+        if (deviceStatusNbr < (1)) {
+            dev.setDeviceStatus(1);
         } else {
             dev.setDeviceStatus(0);
         }

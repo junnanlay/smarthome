@@ -18,24 +18,43 @@
     </head>
     <body>
 
-        <div class="login-dark h-100">
-            <form action="Loginservlet" method="post">
-                <h2>Smarthouse</h2>
-                <div class="illustration">
-                    <img src="img/logo_1.png">
+
+        <form action="Loginservlet" method="post">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+                    <div class="col-md-8 col-lg-6">
+                        <div class="login d-flex align-items-center py-5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-9 col-lg-8 mx-auto">
+                                        <div class="illustration">
+                                            <img src="img/logo_1.png">
+                                        </div>
+                                        <br>
+                                        <form>
+                                            <div class="form-label-group">
+                                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+                                                <label for="inputEmail">Email address</label>
+                                            </div>
+
+                                            <div class="form-label-group">
+                                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                                                <label for="inputPassword">Password</label>
+                                            </div>
+                                            <button class="btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                                            <div class="text-center">
+                                                <a class="forgot" href="#" data-toggle="modal" data-target="#bannerformmodal"> Forgot your password?</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input class="form-control" type="email" name="email" placeholder="Email" > 
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="password" name="password" placeholder="Password"> 
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">Log In </button>
-                </div>
-                <a class="forgot" href="#" data-toggle="modal" data-target="#bannerformmodal"> Forgot your password?</a>
-            </form>
-        </div>
+            </div>
+        </form>
+
 
         <div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
             <div class="modal-dialog" role="document">

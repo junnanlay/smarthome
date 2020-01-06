@@ -19,7 +19,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">Smarthouse</a>
+                <a class="navbar-brand" href="index.jsp">Smarthouse</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,7 +34,7 @@
                             <a class="nav-link" href="#">Instructions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.jsp">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="login.jsp">Login</a>
@@ -52,21 +52,21 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <!-- Slide One - Set the background image for this slide in the line below -->
+                    
                     <div class="carousel-item active" style="background-image: url('./img/sliderpic1.jpg')">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="display-4">Smarthouse</h3>
                             <p class="lead">Control your house with your phone or through the website.</p>
                         </div>
                     </div>
-                    <!-- Slide Two - Set the background image for this slide in the line below -->
+                    
                     <div class="carousel-item" style="background-image: url('./img/sliderpic2.jpg')">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="display-4">Smarthouse</h3>
                             <p class="lead">Use internet connection to access</p>
                         </div>
                     </div>
-                    <!-- Slide Three - Set the background image for this slide in the line below -->
+                    
                     <div class="carousel-item" style="background-image: url('./img/sliderpic3.jpg')">
                         <div class="carousel-caption d-none d-md-block">
                             <h3 class="display-4">Smarthouse</h3>
@@ -84,30 +84,5 @@
                 </a>
             </div>
         </header>
-
-        <div class="container" id="card-container">
-            <div class="card-deck">
-                <div class="card">
-                    <img class="card-img-top" src="https://img.icons8.com/ios-filled/200/000000/wheelchair.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Simple to use</h5>
-                        <p class="card-text">The application is a easy to use application where the user can control different devices in the </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://img.icons8.com/cotton/200/000000/wireless-cloud-access.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Lorem ipsum</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="https://img.icons8.com/ios-filled/200/000000/cottage--v2.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Lorem ipsum</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
-            </div>
     </body>
 </html>

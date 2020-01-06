@@ -90,6 +90,7 @@ public class RoomServlet extends HttpServlet {
         deviceBean.setDevice(dataList);
          */
         HttpSession session = request.getSession();
+        session.setAttribute("roomid", roomid);
         session.setAttribute("devicebean", device);
 
         response.sendRedirect(request.getContextPath() + "/main/gui.jsp");

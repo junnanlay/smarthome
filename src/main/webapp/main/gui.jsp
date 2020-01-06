@@ -24,10 +24,10 @@
     </head>
     <body>
 
-        
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Smarthouse</a>
+                <a class="navbar-brand" href="rooms.jsp">Smarthouse</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,104 +48,124 @@
                 </div>
             </div>
         </nav>
-
-        <div><br></div>
         <br>
-        
-        <form action="../Refreshservlet" method="POST">
-            <button type="submit" name="refreshBtn" value="refresh" class="btn btn-secondary">Refresh</button>
-        </form>
+        <div class="container">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <form action="../Refreshservlet" method="POST">
+                            <input type="hidden" name="roomid" value="${sessionScope.roomid}">
+                            <button type="submit" class="btn btn-secondary btn-lg">Refresh</button>
+                        </form>                      
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
 
-        
-        <c:forEach var="item" items="${sessionScope.devicebean}">
-        
-        <c:set var = "theString" value = "${item.deviceName}"/>
-                <c:set var = "lampString" value = 'lamp'/>
-                
+                <div class="col-md-6 text-center">
+                    <h1 class="mt-5 text-white font-weight-light">Updatable devices</h1>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <c:forEach var="item" items="${sessionScope.devicebean}">
 
-                <c:if test = "${fn:containsIgnoreCase(theString, 'lamp')}">  
-                        <jsp:include page="component.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'radiator')}">  
-                        <jsp:include page="radiator.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'fan')}">  
-                        <jsp:include page="fan.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'timer')}">  
-                        <jsp:include page="timer.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'waterleak')}">  
-                        <jsp:include page="waterleak.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if><c:if test = "${fn:containsIgnoreCase(theString, 'sensor')}">  
-                        <jsp:include page="lightsensor.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'temp')}">  
-                        <jsp:include page="temperature.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'alarm')}">  
-                        <jsp:include page="alarm.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
-                <c:if test = "${fn:containsIgnoreCase(theString, 'power')}">  
-                        <jsp:include page="power.jsp" >
-                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
-                        <jsp:param name="deviceName" value="${item.deviceName}" />
-                        <jsp:param name="deviceId" value="${item.deviceId}" />
-                        <jsp:param name="roomId" value="${item.roomId}" />
-                    </jsp:include>
-                    </c:if>
+                                <c:set var = "theString" value = "${item.deviceName}"/>
+                                <c:set var = "lampString" value = 'lamp'/>
 
-                   
 
-        
-        
-            
-        <%--
-            <p>${item.deviceStatus}</p>
-            <p>${item.deviceName}</p> 
---%>
-            
-        </c:forEach>
-            
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'lamp')}">  
+                                    <jsp:include page="component.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'radiator')}">  
+                                    <jsp:include page="radiator.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'fan')}">  
+                                    <jsp:include page="fan.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'timer')}">  
+                                    <jsp:include page="timer.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                            </c:forEach>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 text-center">
+                    <h1 class="mt-5 text-white font-weight-light">The other devices</h1>
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <c:forEach var="item" items="${sessionScope.devicebean}">
+
+                                <c:set var = "theString" value = "${item.deviceName}"/>
+                                <c:set var = "lampString" value = 'lamp'/>
+
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'waterleak')}">  
+                                    <jsp:include page="waterleak.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if><c:if test = "${fn:containsIgnoreCase(theString, 'sensor')}">  
+                                    <jsp:include page="lightsensor.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'temp')}">  
+                                    <jsp:include page="temperature.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'alarm')}">  
+                                    <jsp:include page="alarm.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'power')}">  
+                                    <jsp:include page="power.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                            </c:forEach>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

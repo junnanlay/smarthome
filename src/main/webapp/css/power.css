@@ -8,72 +8,15 @@ and open the template in the editor.
     Author     : jonny
 */
 
-body{
-    margin: 0 !important; 
-    padding: 0 !important; 
-
-
-
+.power-content{
+    background-color: gray;
+    border-radius: 25px;
+    border: 1px solid black;
+    padding: 20px;
+    padding-bottom: 10px !important;
 }
 
-.container2{
-    background: #3C3C44 !important; 
-    height: 150px !important; 
-    width: 700px !important; 
-    position: relative !important; 
-
-    margin: 40px auto !important; 
-    top: 0 !important; 
-    bottom: 0 !important; 
-    left: 0 !important; 
-    right: 0 !important; 
-
-    border-radius: 20px !important; 
-
-}
-
-.card{
-    background-color: #333 !important; 
-    height: 100% !important; 
-    width: 100% !important; 
-    position: relative !important; 
-    align-items: center !important; 
-
-    border-radius: 20px !important; 
-
-}
-
-.card:hover{
-    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3 !important;
-}
-
-
-div.outer{
-    position: relative; height: 24px !important; 
-
-}
-div.outer img{
-    position: absolute !important; 
-    right: 50px !important; 
-    top: 5px !important; 
-}
-
-div.card-title h3{
-    color: whitesmoke !important; 
-    font-size: 25px !important; 
-    padding-left: 50px !important; 
-    position: absolute !important; 
-}
-
-div.card-text{
-    color: rgb(216, 213, 213) !important; 
-    font-size: 15px !important; 
-    padding-left: 50px !important; 
-    position: absolute !important; 
-    padding-top: 60px !important; 
-}
-.formis{
-    position: absolute !important; 
-    right: 50px !important; 
-    top: 50px !important; 
+.power-image{
+    height: 150px;
+    width: 150px;
 }
