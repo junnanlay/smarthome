@@ -159,6 +159,22 @@
                                         <jsp:param name="roomId" value="${item.roomId}" />
                                     </jsp:include>
                                 </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'stove')}">  
+                                    <jsp:include page="stove.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
+                                <c:if test = "${fn:containsIgnoreCase(theString, 'window')}">  
+                                    <jsp:include page="window.jsp" >
+                                        <jsp:param name="deviceStatus" value="${item.deviceStatus}" />
+                                        <jsp:param name="deviceName" value="${item.deviceName}" />
+                                        <jsp:param name="deviceId" value="${item.deviceId}" />
+                                        <jsp:param name="roomId" value="${item.roomId}" />
+                                    </jsp:include>
+                                </c:if>
                             </c:forEach>
                         </div>
                     </div>

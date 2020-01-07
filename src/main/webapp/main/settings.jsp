@@ -31,7 +31,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Options
                             </a>
-                            <!-- Here's the magic. Add the .animate and .slide-in classes to your .dropdown-menu and you're all set! -->
+                           
                             <div class="dropdown-menu dropdown-menu-right animate slideIn" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="settings.jsp">Settings</a>
                                 <a class="dropdown-item" href="../index.jsp">Logout</a>
