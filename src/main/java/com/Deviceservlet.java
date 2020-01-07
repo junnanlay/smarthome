@@ -63,7 +63,7 @@ public class Deviceservlet extends HttpServlet {
         Client client = ClientBuilder.newClient();
         String roomId = request.getParameter("roomId");
 
-        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi/houseId/").path("rooms").path(roomId).path(deviceId);
+        WebTarget webTarget = client.target("http://localhost:4141/SmartHouseApi/").path("rooms").path(roomId).path(deviceId);
         Device dev = new Device();
         dev.setDeviceId(deviceIdNbr);
 
@@ -80,7 +80,7 @@ public class Deviceservlet extends HttpServlet {
         
         String roomid = request.getParameter("roomId");
 
-        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms/";
+        String roomsURL = "http://localhost:4141/SmartHouseApi/rooms/";
         WebTarget deviceBaseTarget = client.target(roomsURL).path(roomid);
         String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
 

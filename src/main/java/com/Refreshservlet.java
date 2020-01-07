@@ -50,7 +50,7 @@ public class Refreshservlet extends HttpServlet {
         String roomid = request.getParameter("roomid");
         Client client = ClientBuilder.newClient();
 
-        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms/";
+        String roomsURL = "http://localhost:4141/SmartHouseApi/rooms/";
         WebTarget deviceBaseTarget = client.target(roomsURL).path(roomid);
         String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
 

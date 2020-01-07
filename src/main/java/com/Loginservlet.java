@@ -74,7 +74,7 @@ public class Loginservlet extends HttpServlet {
         .header("Authorization","Basic "+authStringEnc)
         .get(String.class);
          
-        String roomsURL = "http://localhost:4141/SmartHouseApi/houseId/rooms";
+        String roomsURL = "http://localhost:4141/SmartHouseApi/rooms";
         WebTarget deviceBaseTarget= client.target(roomsURL);
         String roomContent = deviceBaseTarget.request(MediaType.APPLICATION_JSON).get(String.class);
         
